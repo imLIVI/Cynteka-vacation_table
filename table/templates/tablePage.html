@@ -1,7 +1,7 @@
 {% extends "wrapper.html" %}
 {% block content %}
 <table class="table table-hover table-bordered">
-    <thead class="table-dark">
+    <thead class="table-dark" width="10px" height="10px">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Компания</th>
@@ -12,30 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>anvaz</td>
-        <td>Ситник</td>
-        <td>Касаткина</td>
-        <td>2023-07-01</td>
-        <td>2023-07-21</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>anvaz</td>
-        <td>Ситник</td>
-        <td>Касаткина</td>
-        <td>2023-07-01</td>
-        <td>2023-07-21</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>anvaz</td>
-        <td>Ситник</td>
-        <td>Касаткина</td>
-        <td>2023-07-01</td>
-        <td>2023-07-21</td>
-      </tr>
+    {% for i in id %}
+        <tr>
+            <th scope="row">{{ i }}</th>
+            <td>{{ company_name }}</td>
+            <td>{{ person }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
     </tbody>
   </table>
 {% endblock content %}

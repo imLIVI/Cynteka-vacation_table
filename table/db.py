@@ -27,11 +27,9 @@ def check_info_in_portal_table():
                   "left join person on integration_vacation.manager_id = person.id")
         cursor_portal.execute(select)
         information = cursor_portal.fetchall()
-        print(information)
+        # print(information)
         cursor_portal.close()
         connect_portal.close()
+        return information
     except Exception as error:
         print("check_info_in_portal_table " + str(error))
-
-
-check_info_in_portal_table()
