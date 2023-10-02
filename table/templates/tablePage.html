@@ -12,16 +12,35 @@
       </tr>
     </thead>
     <tbody>
-      {% for i in id %}
-        <tr>
-            <th scope="row">{{ i }}</th>
-            <td>{{ company_name }}</td>
-            <td>{{ person }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    {% endfor %}
+      <!--<tr>
+        <th scope="row">1</th>
+        <td>anvaz</td>
+        <td>Ситник</td>
+        <td>Касаткина</td>
+        <td>2023-07-01</td>
+        <td>2023-07-21</td>
+      </tr>
+
+      <tr>
+        <th scope="row">3</th>
+        <td>anvaz</td>
+        <td>Ситник</td>
+        <td>Касаткина</td>
+        <td>2023-07-01</td>
+        <td>2023-07-21</td>
+      </tr>-->
+      
+      {% for dict in dict_list %}
+      <tr>
+        <th scope="row">{{ dict.id }}</th>
+        <td>{{ dict.company_name }}</td>
+        <td>{{ dict.person }}</td>
+        <td>Касаткина</td>
+        <td>2023-07-01</td>
+        <td>2023-07-21</td>
+      </tr>
+      {% endfor %}
+      
     </tbody>
   </table>
 {% endblock content %}
