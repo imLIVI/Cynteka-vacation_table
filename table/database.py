@@ -1,7 +1,7 @@
 import psycopg2
 
 def query_execute(cursor):   
-    query = "select integration_vacation.id, company.short_name, person.last_name " +  "from integration_vacation " + "left join company on integration_vacation.company_id = company.id " + "left join person on integration_vacation.manager_id = person.id"
+    query = "select integration_vacation.id, company.short_name, company.cynteka_address, person.last_name " +  "from integration_vacation " + "left join company on integration_vacation.company_id = company.id " + "left join person on integration_vacation.manager_id = person.id"
     cursor.execute(query)
 
     # Получение строк запроса

@@ -33,7 +33,7 @@
       {% for dict in dict_list %}
       <tr>
         <th scope="row">{{ dict.id }}</th>
-        <td>{{ dict.company_name }}</td>
+        <td><a href="http://{{ dict.company_site }}">{{ dict.company_name }}</a></td>
         <td>{{ dict.person }}</td>
         <td>Касаткина</td>
         <td>2023-07-01</td>

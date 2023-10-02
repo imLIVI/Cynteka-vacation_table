@@ -8,7 +8,8 @@ def query_parse(persons_list):
         dict = {
         'id': person_info[0],
         'company_name': person_info[1],
-        'person': person_info[2]
+        'company_site': person_info[2],
+        'person': person_info[3]
         }
         dict_list.append(dict)
     return dict_list  
