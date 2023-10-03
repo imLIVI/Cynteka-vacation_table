@@ -7,7 +7,7 @@ def query_execute(cursor):
         "ELSE 'False' "
     "END as company_status, "
     "company.cynteka_address, "
-    "person.last_name "
+    "CONCAT(person.last_name, ' ',  person.first_name)"
     "from integration_vacation "
     "left join company on integration_vacation.company_id = company.id "
     "left join person on integration_vacation.manager_id = person.id ")
