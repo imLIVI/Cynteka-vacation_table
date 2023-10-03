@@ -7,8 +7,8 @@
         <th scope="col">Компания</th>
         <th scope="col">Внедренец</th>
         <th scope="col">Заместитель</th>
-        <th scope="col">Дата начала замещения</th>
-        <th scope="col">Дата окончания замещения</th>
+        <th scope="col">Дата замещения c</th>
+        <th scope="col">Дата замещения по (включительно)</th>
       </tr>
     </thead>
     <tbody>
@@ -33,10 +33,43 @@
       {% for dict in dict_list %}
       <tr>
         <th scope="row">{{ dict.id }}</th>
-        <td><a href="http://{{ dict.company_site }}">{{ dict.company_name }}</a></td>
+        {% if dict.status %}
+          <td><a href="http://{{ dict.company }}">{{ dict.company }}</a></td>
+        {% else %}  
+          <td>{{ dict.company }}</a></td>
+        {% endif %}  
         <td>{{ dict.person }}</td>
-        <td>Касаткина</td>
-        <td>2023-07-01</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Выбрать заместителя...
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <!-- элемент input с id = datetimepicker1 -->
+            <div class='input-group date' id='datetimepicker1'>
+              <input type='text' class='form-control' />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </div>
+          
+          <!-- Инициализация виджета "Bootstrap datetimepicker" -->
+          <script>
+            $(function () {
+              // идентификатор элемента (например: #datetimepicker1), для которого необходимо инициализировать виджет Bootstrap DateTimePicker
+              $('#datetimepicker1').datetimepicker();
+            });
+          </script>
+        </td>
         <td>2023-07-21</td>
       </tr>
       {% endfor %}

@@ -1,14 +1,26 @@
 from django.shortcuts import render
 from . import database
 
+# Функция для получения булева статуса компании (ALIVE) 
+def get_bool_company_status(str_status):
+    if str_status == 'True':
+            status = True
+    else: 
+        status = False
+
+    return status
+
+
 # Парсинг запроса для формирования списка словарей
 def query_parse(persons_list):
     dict_list = []
+
     for person_info in persons_list:
+
         dict = {
         'id': person_info[0],
-        'company_name': person_info[1],
-        'company_site': person_info[2],
+        'status' : get_bool_company_status(person_info[1]),
+        'company': person_info[2],
         'person': person_info[3]
         }
         dict_list.append(dict)
