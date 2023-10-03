@@ -1,17 +1,6 @@
 import psycopg2
 
-def query_execute(cursor):   
-    query = ("select integration_vacation.id, "
-    "CASE "
-       "WHEN company.cynteka_status = 'ALIVE' THEN 'True' "
-        "ELSE 'False' "
-    "END as company_status, "
-    "company.cynteka_address, "
-    "CONCAT(person.last_name, ' ',  person.first_name)"
-    "from integration_vacation "
-    "left join company on integration_vacation.company_id = company.id "
-    "left join person on integration_vacation.manager_id = person.id ")
-    #"select integration_vacation.id, company.short_name, company.cynteka_address, person.last_name " +  "from integration_vacation " + "left join company on integration_vacation.company_id = company.id " + "left join person on integration_vacation.manager_id = person.id"
+def query_execute(cursor, query):   
     cursor.execute(query)
 
     # Получение строк запроса

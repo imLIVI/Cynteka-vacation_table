@@ -44,10 +44,10 @@
             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Выбрать заместителя...
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="overflow-y: scroll;height: 300px;" data-live-search="true">
+              {% for person in person_list %}
+                <a class="dropdown-item" href="#">{{ person }}</a>
+              {% endfor %}
             </div>
           </div>
         </td>
