@@ -55,7 +55,6 @@ def table(request):
     "left join company on integration_vacation.company_id = company.id "
     "left join person on integration_vacation.manager_id = person.id ")
     res_query = database.query_execute(cursor, query_main)
-    print(res_query)
     dict_list = query_main_parse(res_query)
 
 
@@ -65,7 +64,6 @@ def table(request):
         "left join company on integration_vacation.company_id = company.id "
         "left join person on integration_vacation.manager_id = person.id")
     res_query = database.query_execute(cursor, query_get_person)
-    print(res_query)
     person_list = query_persons_parse(res_query)
 
     # Создание словаря (context) для html
@@ -73,7 +71,4 @@ def table(request):
 
     database.close(cursor, connection)
    
-    
-
-    #TODO: вместо {} должен передаваться словарь: context: persons
     return render(request, 'tablePage.html', context=dict_list)
