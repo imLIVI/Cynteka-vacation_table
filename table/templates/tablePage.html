@@ -3,12 +3,12 @@
 <div class="dropdown-class" >
   <form>
     <label for="name-select">Выберите внедренца для просмотра отпуска</label>
-    <select class="main-filter" id="name-select">
-      <option value="" selected disabled hidden>Выберите внедренца</option>
+    <select class="form-select" id="form-select-top" name="form-select-top">
+      <option selected>Выбор внедренца...</option>
       {% for person in person_list %}
-        <option value="">{{ person }}</option>
+        <option>{{ person }}</option>
       {% endfor %}
-    </select>
+  </select>
   </form>
 </div>
 
@@ -65,8 +65,8 @@
               {% endfor %}
             </div>
           </div> -->
-          <select class="form-select">
-            <label for="name-select">Выбор внедренца...</label>
+          <select class="form-select" id="form-select-in-table" name="form-select-in-table">
+              <option selected>Выбор внедренца...</option>
               {% for person in person_list %}
                 <option>{{ person }}</option>
               {% endfor %}
